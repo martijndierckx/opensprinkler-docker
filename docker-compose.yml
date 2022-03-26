@@ -1,0 +1,14 @@
+version: '3'
+services:
+  opensprinkler:
+    build: .
+    restart: always
+    volumes:
+     - ./data:/data
+    ports:
+      - "8080:8080"
+    logging:
+      driver: "json-file"
+      options:
+        max-file: "5"
+        max-size: "50m"
